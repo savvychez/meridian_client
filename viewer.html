@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian Viewer</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- <script src="scripts/jquery.csv.min.js"></script> -->
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+    <script src="scripts/viewer.js"></script>
+    <link rel="stylesheet" href="styles/viewer.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="assets/ui/path.svg" alt="Meridian WX">      
+    </div>
+    <div class="content">
+        <div style="font-family:'neue-haas-grotesk-text'">&nbsp;</div>
+        <div class="vis">
+            <canvas id="gbar"></canvas>
+            <canvas id="wmap"></canvas>
+        </div>
+        <div class="info">
+            <h1 class="title">Optimum Interpolation Sea Surface Temperature</h1>
+            <h2 class="datasource">Data: NOAA-NCEI</h2>
+            <br>
+            <h2 class="coordx dev"">ScrollX:</h1>
+            <h2 class="coordy dev"">ScrollY:</h1>
+            <h2 class="width dev">W:</h1>
+            <h2 class="height dev">H:</h1>
+            <h2 class="mx dev">MouseX: </h1>
+            <h2 class="my dev">MouseY: </h1>
+            <h2 class="bar dev">Bar:</h1>
+        </div>
+    </div>
+</body>
+
+</html>

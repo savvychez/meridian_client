@@ -1,0 +1,77 @@
+@import url("https://use.typekit.net/vse3qqx.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(245, 250, 255);
+    padding-bottom: 0.5%;
+}
+
+.header {
+    background-color: #1C3942;
+    height: 60px;
+
+    display: flex;
+}
+
+.header > img {
+    margin: 0 auto;
+    width: 120px;
+}
+
+.content {
+    display: flex;
+}
+
+.vis {
+    display: flex;
+    margin-right: 1%;
+}
+
+#gbar {
+    margin: 1.45% 0 0 1%;
+}
+
+#wmap {
+    border-radius: 10px;
+    margin: 1.45% 0 0 0.5%;
+    /* image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges; */
+}
+
+.info {
+    margin: 1.25% 1.5%;
+}
+
+.info > h1 {
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.2em;
+    color: #2a5764;
+}
+
+.dev {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2a5764;
+}
+
+.datasource {
+    font-family: proxima-nova,sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #61a2b4;
+
+    margin-top: 1%;
+}
+
+ 
+
