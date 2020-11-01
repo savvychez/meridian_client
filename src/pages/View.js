@@ -224,7 +224,7 @@ export const View = () => {
       console.log("Hello World")
     }
 
-    axios.get(`http://viewmeridian.com/api/data/stats/${year}/${month}/${day}`)
+    axios.get(`http://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
       .then((res) => {
         setStats(res.data);
         console.log(res.data);
@@ -282,8 +282,8 @@ export const View = () => {
                 selected={date}
                 id="date_picker"
                 onChange={(date) => setDate(date)}
-                minDate={new Date(2019,0,1)}
-                maxDate={new Date(2019,0,30)}
+                minDate={new Date(2020,0,1)}
+                maxDate={new Date(2020,0,30)}
                 customInput={<DateButton />}
               />
             </div>
