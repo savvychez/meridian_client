@@ -117,10 +117,10 @@ export const View = () => {
   const buildGlobe = () => {
     geometry = new SphereGeometry(5, 70, 70);
     earthMaterial = new MeshStandardMaterial({
-      bumpMap: loader.load("http://viewmeridian.com/api/data/bump"),
+      bumpMap: loader.load("https://viewmeridian.com/api/data/bump"),
       bumpScale: 0.15,
     });
-    earthMaterial.map = loader.load("http://viewmeridian.com/api/data/map");
+    earthMaterial.map = loader.load("https://viewmeridian.com/api/data/map");
     earth = new Mesh(geometry, earthMaterial);
     earth.position.x = 0;
     earth.position.y = 0;
@@ -130,9 +130,6 @@ export const View = () => {
 
   const buildHeatmap = () => {
     heatmapMaterial = earthMaterial.clone();
-    // heatmapMaterial.map = loader.load(
-      // "http://localhost:5000/data/heatmap/2019/01/01"
-    // );
     heatmapMaterial.transparent = true;
     heatmapRef.current = heatmapMaterial;
 
@@ -220,14 +217,9 @@ export const View = () => {
 
     controls.autoRotate = true;
 
-    let updateMap = () => {
-      console.log("Hello World")
-    }
-
-    axios.get(`http://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
+    axios.get(`https://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
       .then((res) => {
         setStats(res.data);
-        console.log(res.data);
       });
 
     window.addEventListener("resize", handleResize);
@@ -236,9 +228,8 @@ export const View = () => {
   }, []);
 
   useEffect(() => {
-    console.log(date.getFullYear())
-    loadHeatmap(`http://viewmeridian.com/api/data/heatmap/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
-    axios.get(`http://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
+    loadHeatmap(`https://viewmeridian.com/api/data/heatmap/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
+    axios.get(`https://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
       .then((res) => {
         setStats(res.data);
         console.log(res.data);
@@ -283,7 +274,7 @@ export const View = () => {
                 id="date_picker"
                 onChange={(date) => setDate(date)}
                 minDate={new Date(2020,0,1)}
-                maxDate={new Date(2020,0,30)}
+                maxDate={new Date(2020,0,31)}
                 customInput={<DateButton />}
               />
             </div>
