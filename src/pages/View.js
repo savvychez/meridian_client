@@ -23,10 +23,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import meridianLogo from "../assets/meridian.svg";
 
 export const View = () => {
-  const [day, setDay] = useState(1);
-  const [month, setMonth] = useState(1);
-  const [year, setYear] = useState(2019);
-  const [date, setDate] = useState(new Date(2019, 0, 1));
+  // const [day, setDay] = useState(1);
+  // const [month, setMonth] = useState(1);
+  // const [year, setYear] = useState(2020);
+  const [date, setDate] = useState(new Date(2020, 0, 1));
   const [rotate, setRotate] = useState(true);
 
   const DateButton = ({ value, onClick }) => (
@@ -117,10 +117,10 @@ export const View = () => {
   const buildGlobe = () => {
     geometry = new SphereGeometry(5, 70, 70);
     earthMaterial = new MeshStandardMaterial({
-      bumpMap: loader.load("http://localhost:5000/data/bump"),
+      bumpMap: loader.load("http://viewmeridian.com/api/data/bump"),
       bumpScale: 0.15,
     });
-    earthMaterial.map = loader.load("http://localhost:5000/data/map");
+    earthMaterial.map = loader.load("http://viewmeridian.com/api/data/map");
     earth = new Mesh(geometry, earthMaterial);
     earth.position.x = 0;
     earth.position.y = 0;
@@ -224,7 +224,7 @@ export const View = () => {
       console.log("Hello World")
     }
 
-    axios.get(`http://localhost:5000/data/stats/${year}/${month}/${day}`)
+    axios.get(`http://viewmeridian.com/api/data/stats/${year}/${month}/${day}`)
       .then((res) => {
         setStats(res.data);
         console.log(res.data);
@@ -237,8 +237,8 @@ export const View = () => {
 
   useEffect(() => {
     console.log(date.getFullYear())
-    loadHeatmap(`http://localhost:5000/data/heatmap/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
-    axios.get(`http://localhost:5000/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
+    loadHeatmap(`http://viewmeridian.com/api/data/heatmap/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
+    axios.get(`http://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
       .then((res) => {
         setStats(res.data);
         console.log(res.data);
