@@ -53,10 +53,14 @@ canvas {
     background-color: #1C3942;
 }
 
-.info-ctr {
+.left-ctr {
     position: absolute;
     top: 25px;
     left: 25px;
+}
+
+.info-ctr {
+    position: relative;
     background-color: rgba(255, 255, 255,0.75);
     border-radius: 10px;
     box-shadow: 0px 3px 6px #11111154;
@@ -159,3 +163,4 @@ p {
     float: right;
     color: #122329;
 }
+

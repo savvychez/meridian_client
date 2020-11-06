@@ -217,7 +217,7 @@ export const View = () => {
 
     controls.autoRotate = true;
 
-    axios.get(`https://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
+    axios.get(`https://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`)
       .then((res) => {
         setStats(res.data);
       });
@@ -228,13 +228,13 @@ export const View = () => {
   }, []);
 
   useEffect(() => {
-    loadHeatmap(`https://viewmeridian.com/api/data/heatmap/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
-    axios.get(`https://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
+    loadHeatmap(`https://viewmeridian.com/api/data/heatmap/${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`)
+    axios.get(`https://viewmeridian.com/api/data/stats/${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`)
       .then((res) => {
         setStats(res.data);
         console.log(res.data);
       });
-  
+
   }, [date]);
 
   useEffect(() => {
@@ -260,38 +260,43 @@ export const View = () => {
           onChange={() => setRotate(!rotate)}
         />
       </div>
-      <div className="info-ctr">
-        <div className="logo-ctr">
-          <img src={meridianLogo} />
-        </div>
-        <div className="info">
-          <h1>Optimum Interpolation Sea Surface Temperatures</h1>
-          <div className="date-select">
-            <div className="select">
-              <label htmlFor="date">Date</label>
-              <DatePicker
-                selected={date}
-                id="date_picker"
-                onChange={(date) => setDate(date)}
-                minDate={new Date(2020,0,1)}
-                maxDate={new Date(2020,0,31)}
-                customInput={<DateButton />}
-              />
-            </div>
-            <div className="playback"></div>
+      <div className="left-ctr">
+        <div className="info-ctr">
+          <div className="logo-ctr">
+            <img src={meridianLogo} />
           </div>
-          <label htmlFor="">Data</label>
-          <h2>Max Temp: </h2>
-          <p>{stats.max}°C</p>
-          <br />
-          <h2>Min Temp: </h2>
-          <p>{stats.min}°C</p>
-          <br />
-          <h2>Mean SST: </h2>
-          <p>{stats.avg}°C</p>
-          <br />
-          <h2>Std Dev: </h2>
-          <p>{stats.std}°C</p>
+          <div className="info">
+            <h1>Optimum Interpolation Sea Surface Temperatures</h1>
+            <div className="date-select">
+              <div className="select">
+                <label htmlFor="date">Date</label>
+                <DatePicker
+                  selected={date}
+                  id="date_picker"
+                  onChange={(date) => setDate(date)}
+                  minDate={new Date(2020, 0, 1)}
+                  maxDate={new Date(2020, 0, 31)}
+                  customInput={<DateButton />}
+                />
+              </div>
+              <div className="playback"></div>
+            </div>
+            <label htmlFor="">Data</label>
+            <h2>Max Temp: </h2>
+            <p>{stats.max}°C</p>
+            <br />
+            <h2>Min Temp: </h2>
+            <p>{stats.min}°C</p>
+            <br />
+            <h2>Mean SST: </h2>
+            <p>{stats.avg}°C</p>
+            <br />
+            <h2>Std Dev: </h2>
+            <p>{stats.std}°C</p>
+          </div>
+        </div>
+        <div className="">
+          <h2>See full dataset &gt;</h2>
         </div>
       </div>
     </div>
