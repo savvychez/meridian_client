@@ -60,7 +60,7 @@ canvas {
     background-color: rgba(255, 255, 255,0.75);
     border-radius: 10px;
     box-shadow: 0px 3px 6px #11111154;
-    width: 30em;
+    width: 25.5em;
     transition: 0.25s;
 }
 
@@ -70,7 +70,7 @@ canvas {
 
 .logo-ctr {
     background-color: var(--meridian-blue);
-    padding: 1.25em;
+    padding: 1.1em;
     opacity: 0.95;
     border-radius: 10px 10px 0 0;
 
@@ -78,16 +78,17 @@ canvas {
 
 .logo-ctr>img {
     display: block;
-    width: 10em;
+    width: 8.5em;
     margin: 0 auto;
 }
 
 .info {
-    padding: 1.5em 1.7em;
+    padding: 1.5em 1.5em;
 }
 
 .info>h1 {
     font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: 1.75em;
     font-weight: 700;
     font-style: normal;
     color: var(--meridian-blue);
@@ -101,7 +102,7 @@ canvas {
     background-color: rgba(255, 255, 255,0.25);
     padding: 8px 15px 5px 15px;
     border: 1px solid #D2D2D2;
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: aktiv-grotesk, sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -120,18 +121,18 @@ label {
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 1.2em;
+    font-size: 1.1em;
     user-select: none;
     color: var(--meridian-blue);
 }
 
 input {
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 8px 8px 6px 6px;
     font-family: aktiv-grotesk, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.25em;
+    font-size: 1.1em;
     border: 1px solid #D2D2D2;
     background-color: rgba(255, 255, 255,0.5);
     color: var(--meridian-blue);
@@ -142,7 +143,7 @@ h2 {
     font-family: aktiv-grotesk, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.25em;
+    font-size: 1.1em;
     line-height: 1.5em;
     color: var(--meridian-blue);
     /* border: 1px solid #D2D2D2; */
@@ -154,7 +155,7 @@ p {
     font-family: aktiv-grotesk, sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 1.25em;
+    font-size: 1.1em;
     float: right;
     color: #122329;
 }
