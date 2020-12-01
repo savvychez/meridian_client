@@ -22,6 +22,10 @@ import "../styles/viewer.css";
 import "react-datepicker/dist/react-datepicker.css";
 import meridianLogo from "../assets/meridian.svg";
 
+import 'react-vis/dist/style.css';
+import { XYPlot, LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, VerticalGridLines, HorizontalGridLines } from 'react-vis';
+import LineGraph from "../components/LineGraph";
+
 export const View = () => {
   // const [day, setDay] = useState(1);
   // const [month, setMonth] = useState(1);
@@ -82,6 +86,19 @@ export const View = () => {
     heatmapRef.current.map = loader.load(mapURI);
   };
 
+  const data = [
+    { x: 0, y: 8 },
+    { x: 1, y: 5 },
+    { x: 2, y: 4 },
+    { x: 3, y: 9 },
+    { x: 4, y: 1 },
+    { x: 5, y: 7 },
+    { x: 6, y: 6 },
+    { x: 7, y: 3 },
+    { x: 8, y: 2 },
+    { x: 9, y: 0 }
+  ];
+
   const init = () => {
     //Initializes Scene, Camera, and Controls
     scene = new Scene();
@@ -115,7 +132,7 @@ export const View = () => {
   };
 
   const buildGlobe = () => {
-    geometry = new SphereGeometry(5, 70, 70);
+    geometry = new SphereGeometry(5, 80, 80);
     earthMaterial = new MeshStandardMaterial({
       bumpMap: loader.load("https://viewmeridian.com/api/data/bump"),
       bumpScale: 0.15,
@@ -206,6 +223,8 @@ export const View = () => {
     renderer.setSize(width, height);
   };
 
+  const [points, setPoints] = useState([]);
+
   useEffect(() => {
     init();
     buildGlobe();
@@ -242,10 +261,6 @@ export const View = () => {
   }, [rotate]);
 
 
-  const handleRotate = () => {
-    // controls.autoRotate = true
-  }
-
   return (
     <div>
       <canvas ref={canvasRef}></canvas>
@@ -256,14 +271,13 @@ export const View = () => {
           name="rotate"
           id="rotate"
           checked={rotate}
-          // checked={rotate}
           onChange={() => setRotate(!rotate)}
         />
       </div>
       <div className="left-ctr">
         <div className="info-ctr">
           <div className="logo-ctr">
-            <img src={meridianLogo} />
+            <img src={meridianLogo} alt="Meridian Logo" />
           </div>
           <div className="info">
             <h1>Optimum Interpolation Sea Surface Temperatures</h1>
@@ -295,10 +309,20 @@ export const View = () => {
             <p>{stats.std}°C</p>
           </div>
         </div>
-        <div className="">
-          <h2>See full dataset &gt;</h2>
-        </div>
       </div>
+      {/* <div className="full-stats"> */}
+
+      {/* </div> */}
+      {/* <div className="card"> */}
+        {/* <h2>See expanded dataset &gt;</h2> */}
+        {/* <FlexibleWidthXYPlot height={120} className="graph" style={{fontSize:"40px"}}> */}
+          {/* <XAxis /> */}
+          {/* <YAxis /> */}
+          {/* <VerticalGridLines /> */}
+          {/* <HorizontalGridLines /> */}
+          {/* <LineGraph data={data} className="line-series" /> */}
+        {/* </FlexibleWidthXYPlot> */}
+      {/* </div> */}
     </div>
   );
 };

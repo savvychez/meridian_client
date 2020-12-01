@@ -25,13 +25,61 @@ canvas {
     overflow: initial;
 }
 
+canvas:focus, canvas:active {
+    outline: none;
+}
+
+label {
+    display: block;
+    margin-top: 1.25em;
+    margin-bottom: 0.25em;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.1em;
+    user-select: none;
+    color: var(--meridian-blue);
+}
+
+input {
+    border-radius: 10px;
+    padding: 8px 8px 6px 6px;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+    border: 1px solid #D2D2D2;
+    background-color: rgba(255, 255, 255,0.5);
+    color: var(--meridian-blue);
+    outline: none;
+}
+
+h2 {
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: var(--meridian-blue);
+    display: inline;
+}
+
+p {
+    display: inline;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.1em;
+    float: right;
+    color: #122329;
+}
+
 .controls {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 20px;
+    right: 20px;
     border-radius: 5px;
     box-shadow: 0px 3px 6px #11111154;
-    /* border: 2px solid rgba(28, 57, 66, 0.5); */
     background-color: rgba(255, 255, 255,0.85);
     padding: 10px 20px;
     transition: 0.25s;
@@ -55,16 +103,16 @@ canvas {
 
 .left-ctr {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 20px;
+    left: 20px;
 }
 
 .info-ctr {
     position: relative;
     background-color: rgba(255, 255, 255,0.75);
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 3px 6px #11111154;
-    width: 25.5em;
+    width: 22.5em;
     transition: 0.25s;
 }
 
@@ -76,8 +124,7 @@ canvas {
     background-color: var(--meridian-blue);
     padding: 1.1em;
     opacity: 0.95;
-    border-radius: 10px 10px 0 0;
-
+    border-radius: 5px 5px 0 0;
 }
 
 .logo-ctr>img {
@@ -118,49 +165,38 @@ canvas {
     cursor: pointer;
 }
 
-label {
-    display: block;
-    margin-top: 1.25em;
-    margin-bottom: 0.25em;
+.full-stats {
+    
+}
+
+.card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    /* right: 20px; */
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px #11111154;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 10px 20px;
+    transition: 0.25s;
+    /* height: 25em; */
+    width: 22.5em;
+
+}
+
+.card:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.card > h2 {
+    font-weight: 1000;
+    text-align: right;
+    display: inline;
+    margin: 0 auto;
+}
+
+.graph {
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 1.1em;
-    user-select: none;
-    color: var(--meridian-blue);
-}
-
-input {
-    border-radius: 10px;
-    padding: 8px 8px 6px 6px;
-    font-family: aktiv-grotesk, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.1em;
-    border: 1px solid #D2D2D2;
-    background-color: rgba(255, 255, 255,0.5);
-    color: var(--meridian-blue);
-    outline: none;
-}
-
-h2 {
-    font-family: aktiv-grotesk, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.1em;
-    line-height: 1.5em;
-    color: var(--meridian-blue);
-    /* border: 1px solid #D2D2D2; */
-    display: inline;
-}
-
-p {
-    display: inline;
-    font-family: aktiv-grotesk, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1.1em;
-    float: right;
-    color: #122329;
+    color: rebeccapurple;
 }
 
