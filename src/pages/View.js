@@ -289,7 +289,7 @@ export const View = () => {
                   id="date_picker"
                   onChange={(date) => setDate(date)}
                   minDate={new Date(2020, 0, 1)}
-                  maxDate={new Date(2020, 0, 31)}
+                  maxDate={new Date(2020, 3, 31)}
                   customInput={<DateButton />}
                 />
               </div>
@@ -315,13 +315,13 @@ export const View = () => {
       </div>
       <div className="card">
         <h2>See expanded dataset &gt;</h2>
-        <FlexibleWidthXYPlot height={120} className="graph" style={{fontSize:"40px"}}>
+        {/* <FlexibleWidthXYPlot height={120} className="graph" style={{fontSize:"40px"}}>
           <XAxis />
           <YAxis />
           <VerticalGridLines />
           <HorizontalGridLines />
           <LineGraph data={data} className="line-series" />
-        </FlexibleWidthXYPlot>
+        </FlexibleWidthXYPlot> */}
       </div>
     </div>
   );
