@@ -310,19 +310,19 @@ export const View = () => {
           </div>
         </div>
       </div>
-      {/* <div className="full-stats"> */}
+      <div className="full-stats">
 
-      {/* </div> */}
-      {/* <div className="card"> */}
-        {/* <h2>See expanded dataset &gt;</h2> */}
-        {/* <FlexibleWidthXYPlot height={120} className="graph" style={{fontSize:"40px"}}> */}
-          {/* <XAxis /> */}
-          {/* <YAxis /> */}
-          {/* <VerticalGridLines /> */}
-          {/* <HorizontalGridLines /> */}
-          {/* <LineGraph data={data} className="line-series" /> */}
-        {/* </FlexibleWidthXYPlot> */}
-      {/* </div> */}
+      </div>
+      <div className="card">
+        <h2>See expanded dataset &gt;</h2>
+        <FlexibleWidthXYPlot height={120} className="graph" style={{fontSize:"40px"}}>
+          <XAxis />
+          <YAxis />
+          <VerticalGridLines />
+          <HorizontalGridLines />
+          <LineGraph data={data} className="line-series" />
+        </FlexibleWidthXYPlot>
+      </div>
     </div>
   );
 };
