@@ -313,8 +313,8 @@ export const View = () => {
       <div className="full-stats">
 
       </div>
-      <div className="card">
-        <h2>See expanded dataset &gt;</h2>
+      {/* <div className="card"> */}
+        {/* <h2>See expanded dataset &gt;</h2> */}
         {/* <FlexibleWidthXYPlot height={120} className="graph" style={{fontSize:"40px"}}>
           <XAxis />
           <YAxis />
@@ -322,7 +322,7 @@ export const View = () => {
           <HorizontalGridLines />
           <LineGraph data={data} className="line-series" />
         </FlexibleWidthXYPlot> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };
